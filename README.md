@@ -1,2 +1,6 @@
 # Latin-Alphabet-Recognition-Using-Convolutional-Neural-Networks-in-Tensorflow
 Recognizes Images of Latin Alphabet with up to 89% accuracy. Credits to gregv for his dataset on Kaggle which can be found here: https://www.kaggle.com/gregvial/comnist
+
+# Data Cleaning and Preprocessing
+The dataset came in a folder with subdirectories corresponding to the labels of the images which it holds i.e. images/Latin/A held all the images of A, images/Latin/B held all the images of B, and so on. The file, data.py, walks over the dataset and prepares the data in two npy files named train.npy and train_labels.npy making sure that they are shuffled to maintain initial randomness. The train.npy file contains the images opened through PIL(Python Imaging Library) which were resized to 28x28 and grayscaled to save space and make computation easier/quicker. The train_labels.npy contains the labels corresponding to the letters each image represents. They are one hot encoded into row vectors where the position of each on bit depends on the position of the letter in the alphabet i.e. A -> [1,0,0,...], B ->[0,1,0,...], C -> [0,0,1,..], and so on. Data Cleaning and Preprocessing was done by the data.py file.
+
